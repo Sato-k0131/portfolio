@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Satoko Ogino | TOP</title>
+  <meta name="description" content="Portfolio-site | Satoko Ogino">
+  <meta name="author" content="Satoko Ogino">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" hrf="./img/favicon.png">
+
+</head>
+<body>
+
+  <header>
+    <div id="header_in" class="bg_clr_night txt_clr_light">
+      <div class="container">
+      <div class="row mb_5">
+      <div class="two columns logo">
+        <a href="index.html" class="sp"><div class="logoimg"></div></a>
+        <a href="index.html" class="pc"><div class="logoimg"></div></a>
+      </div><!-- two columns -->
+
+      <div class="ten columns navi">
+        <div class="sp sp_navi mt_10">
+          <img id="sp_navi_btn" class="u-max-full-width" src="img/menu.png" alt="メニュー" srcset="img/menu@2x.png 2x"> 
+          <ul class="sp_navi_li txt_center">
+            <li><a href="#" class="mt_20">HOME</a></li>
+            <li><a href="#">ABOUT ME</a></li>
+            <li><a href="#">SERVICE</a></li>
+            <li><a href="#">SKILLS</a></li>
+            <li><a href="#">WORKS</a></li>
+            <li><a href="#" class="line mg_auto mt_20"><img href="./img/icon_mail_flmwht.png" alt="CONTACT" srcset="./img/icon_mail_flmwht@2x.png 2x"></a></li>
+          </ul>
+        </div>
+        <div class="pc pc_navi">
+            <ul class="pc_navi_li">
+              <li><a href="#"><img href="./img/icon_mail_wht.png" alt="CONTACT" srcset="./img/icon_mail_wht@2x.png 2x"></a></li>
+              <li><a href="#">WORKS</a></li>
+              <li><a href="#">SKILLS</a></li>
+              <li><a href="#">SERVICE</a></li>
+              <li><a href="#">ABOUT ME</a></li>
+              <li><a href="#">HOME</a></li>
+            </ul>
+        </div>
+      </div><!-- ten columns -->
+      </div><!-- row -->
+      </div><!-- container -->
+    </div>
+  </header>
+  <!-- /header  -->
+
+  <main>
+    <div class="container">
+      <div class="row">
+      <div class="one-half columns">
+      </div>
+      </div>
+    </div>
+    
+  </main>
+  <!-- /main  -->
+
+  <footer>
+    
+  </footer>
+  <!-- /footer -->
+
+  <script>
+    $(function(){
+        $(document).ready(function() {
+          $("#sp_navi_btn").click(function(){
+            $(this).next().slideToggle();
+          });
+        });
+    });
+    
+  </script>
+</body>
+</html>

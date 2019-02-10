@@ -1,0 +1,229 @@
+@charset "utf-8";
+
+/* ===================
+    - 共通
+=================== */
+
+@media (max-width: 550px) {
+    .pc{
+        display: none;
+    }
+}
+// PC
+@media (min-width: 551px) {
+    .sp{
+        display: none;
+    }
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration:none;
+    color: inherit;
+}
+
+a:hover{
+    color: inherit;
+}
+
+
+/* Fonts
+------------------------------------------------------------*/
+$ja_font : "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Verdana, "ＭＳ Ｐゴシック", sans-serif;
+
+// ベースサイズ：10px
+html {
+    font-size: 62.5%; 
+}
+
+// rem変換用関数
+@mixin fontsize($size: 24, $base: 10) {  // 初期値設定
+    font-size: $size + px;
+    font-size: ($size / $base) * 1rem;
+}
+
+.fnt_SitkaSmall{
+    font-family: "Sitka Small";
+}
+/* Color
+------------------------------------------------------------*/
+$light : #f7f3f3;
+$night : #000b29;
+$gold : #987933;
+$gray : #d0d0d0;
+
+
+/* Common
+------------------------------------------------------------*/
+// Text-Style
+.txt_center{
+    text-align: center;
+}
+.txt_left{
+    text-align: left;
+}
+.txt_right{
+    text-align: right;
+}
+.txt_just{
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+.txt-bld{
+    font-weight: bold; 
+}
+.txt-italic{
+    font-style: italic;
+}
+
+// Text-Color
+.txt_clr_light{
+    color: $light;
+}
+.txt_clr_night{
+    color: $night;
+}
+
+// 文字間隔
+.ltr_spc_1{
+    letter-spacing: 1px;
+}
+.ltr_spc_2{
+    letter-spacing: 2px;
+}
+.ltr_spc_4{
+    letter-spacing: 4px;
+}
+
+// Margin-Style
+.mg_auto{
+    margin: auto;
+}
+.mt_5{
+    margin-top: 5px;
+}
+.mt_10{
+    margin-top: 10px;
+}
+.mt_15{
+    margin-top: 15px;
+}
+.mt_20{
+    margin-top: 20px;
+}
+.mr_0{
+    margin-right: 0px;
+}
+.mr_3{
+    margin-right: 3px;
+}
+.mr_5{
+    margin-right: 5px;
+}
+.mr_10{
+    margin-right: 10px;
+}
+.mb_0{
+    margin-bottom: 0px;
+}
+.mb_3{
+    margin-bottom: 3px;
+}
+.mb_5{
+    margin-bottom: 5px;
+}
+.mb_10{
+    margin-bottom: 10px;
+}
+.mb_15{
+    margin-bottom: 15px;
+}
+.mb_20{
+    margin-bottom: 20px;
+}
+
+
+// Padding-Style
+.pt_10{
+    padding-top: 10px;
+}
+.pt_15{
+    padding-top: 15px;
+}
+.pt_20{
+    padding-top: 20px;
+}
+.pt_30{
+    padding-top: 30px;
+}
+.pt_50{
+    padding-top: 50px;
+}
+.pr_10{
+    padding-right: 10px;
+}
+.pl_10{
+    padding-left: 10px;
+}
+.pl_20{
+    padding-left: 20px;
+}
+.pl_30{
+    padding-left: 30px;
+}
+.pl_40{
+    padding-left: 40px;
+}
+.pb_5{
+    padding-bottom: 5px;
+}
+.pb_10{
+    padding-bottom: 10px;
+}
+.pb_15{
+    padding-bottom: 15px;
+}
+.pd_5{
+    padding: 5px;
+}
+.pd_10{
+    padding: 10px;
+}
+.pd_20{
+    padding: 20px;
+}
+.pd_0{
+    padding: 0px;
+}
+.pd_0_10{
+    padding: 0 10px;
+}
+
+// BackGroundColor-Style
+.bg_clr_wht{
+    background-color: white; 
+}
+.bg_clr_gray{
+    background-color: $gray;
+}
+.bg_clr_night{
+    background-color: $night;
+}
+
+.w_100{
+    width: 100%;
+}
+
+.line{
+    border-top: solid 1px $light;
+    width: 50%;
+}
