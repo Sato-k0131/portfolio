@@ -6,12 +6,13 @@
     - 
 =========================================== */
 
-/* 
-------------------------------------------------------------*/
 body {
     background-color: $light;
+    @include fontsize(12);
 }
 
+/* HEADER
+------------------------------------------------------------*/
 #header_in{
     padding-top: 10px;
     padding-bottom: 4px;
@@ -42,11 +43,11 @@ body {
     width: 100%;
     height: 100%;
     position: fixed;
-    top: 62px;
+    top: 60px;
     right: 0;
     background: #848484;
     margin: 0;
-    padding:0;
+    padding: 0;
     
     li{
         margin: 0;
@@ -85,5 +86,32 @@ body {
         img{
             width: 18px;
         }
+    }
+}
+
+
+/* FOOTER
+------------------------------------------------------------*/
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    li{
+        margin-bottom: 20px;
+    }
+}
+// PC
+@media (min-width: 551px) {
+    footer{
+        ul{
+            width: 290px;
+            margin: auto;
+            overflow: hidden;
+            
+            li{
+                float: left;
+                padding-right: 10px;
+            }
+        }   
     }
 }

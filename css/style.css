@@ -31,6 +31,9 @@ html {
 .fnt_SitkaSmall {
   font-family: "Sitka Small"; }
 
+.fnt_SitkaSmallB {
+  font-family: "Sitka Small"; }
+
 /* Color
 ------------------------------------------------------------*/
 /* Common
@@ -59,6 +62,11 @@ html {
 
 .txt_clr_night {
   color: #000b29; }
+
+.txt_clr_gold {
+  color: #987933;
+  font-size: 14px;
+  font-size: 1.4rem; }
 
 .ltr_spc_1 {
   letter-spacing: 1px; }
@@ -114,6 +122,12 @@ html {
 .mb_20 {
   margin-bottom: 20px; }
 
+.mb_40 {
+  margin-bottom: 40px; }
+
+.mb_50 {
+  margin-bottom: 50px; }
+
 .pt_10 {
   padding-top: 10px; }
 
@@ -125,6 +139,9 @@ html {
 
 .pt_30 {
   padding-top: 30px; }
+
+.pt_40 {
+  padding-top: 40px; }
 
 .pt_50 {
   padding-top: 50px; }
@@ -152,6 +169,12 @@ html {
 
 .pb_15 {
   padding-bottom: 15px; }
+
+.pb_20 {
+  padding-bottom: 20px; }
+
+.pb_40 {
+  padding-bottom: 40px; }
 
 .pd_5 {
   padding: 5px; }
@@ -187,11 +210,13 @@ html {
 /* ==========================================
     - 
 =========================================== */
-/* 
-------------------------------------------------------------*/
 body {
-  background-color: #f7f3f3; }
+  background-color: #f7f3f3;
+  font-size: 12px;
+  font-size: 1.2rem; }
 
+/* HEADER
+------------------------------------------------------------*/
 #header_in {
   padding-top: 10px;
   padding-bottom: 4px; }
@@ -215,7 +240,7 @@ body {
   width: 100%;
   height: 100%;
   position: fixed;
-  top: 62px;
+  top: 60px;
   right: 0;
   background: #848484;
   margin: 0;
@@ -244,5 +269,22 @@ body {
       padding-right: 22px; }
     .pc_navi_li img {
       width: 18px; } }
+/* FOOTER
+------------------------------------------------------------*/
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%; }
+  footer li {
+    margin-bottom: 20px; }
+
+@media (min-width: 551px) {
+  footer ul {
+    width: 290px;
+    margin: auto;
+    overflow: hidden; }
+    footer ul li {
+      float: left;
+      padding-right: 10px; } }
 
 /*# sourceMappingURL=style.css.map */
