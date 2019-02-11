@@ -33,26 +33,28 @@
     <div id="header_in" class="bg_clr_night txt_clr_light">
       <div class="container">
       <div class="row mb_5">
+      <!-- ** LOGO ** -->
       <div class="two columns logo">
         <a href="index.html" class="sp"><div class="logoimg"></div></a>
         <a href="index.html" class="pc"><div class="logoimg"></div></a>
       </div><!-- two columns -->
 
+      <!-- ** NAVIGATION ** -->
       <div class="ten columns navi">
         <div class="sp sp_navi mt_10">
           <img id="sp_navi_btn" class="u-max-full-width" src="img/menu.png" alt="メニュー" srcset="img/menu@2x.png 2x"> 
-          <ul class="sp_navi_li txt_center">
+          <ul class="sp_navi_li">
             <li><a href="#" class="mt_20">HOME</a></li>
             <li><a href="#">ABOUT ME</a></li>
             <li><a href="#">SERVICE</a></li>
             <li><a href="#">SKILLS</a></li>
             <li><a href="#">WORKS</a></li>
-            <li><a href="#" class="line mg_auto mt_20"><img href="./img/icon_mail_flmwht.png" alt="CONTACT" srcset="./img/icon_mail_flmwht@2x.png 2x"></a></li>
+            <li><a href="#" class="line_light mg_auto mt_20"><img href="./img/contact/icon_mail_flmwht.png" alt="CONTACT" srcset="./img/contact/icon_mail_flmwht@2x.png 2x"></a></li>
           </ul>
         </div>
         <div class="pc pc_navi">
             <ul class="pc_navi_li">
-              <li><a href="#"><img href="./img/icon_mail_wht.png" alt="CONTACT" srcset="./img/icon_mail_wht@2x.png 2x"></a></li>
+              <li><a href="#"><img href="./img/contact/icon_mail_wht.png" alt="CONTACT" srcset="./img/contact/icon_mail_wht@2x.png 2x"></a></li>
               <li><a href="#">WORKS</a></li>
               <li><a href="#">SKILLS</a></li>
               <li><a href="#">SERVICE</a></li>
@@ -68,25 +70,318 @@
   <!-- /header  -->
 
   <main>
-    <div class="container txt_clr_night">
-      <div class="row">
-      <div class="one-half columns">
-      </div>
-      </div>
+    <!-- ** EYE CATCH ** -->
+    <div class="eyecatch fnt_SitkaSmall">
+      <h5 class="pt_100 txt-italic">Web Designer</h5>
+      <h2>SATOKO OGINO</h2>
+      <p>PORTFOLIO</p>
     </div>
+    
+    <!--<div class="container txt_clr_night">-->
+    <!--  <div class="row">-->
+    <!--  <div class="twelve columns">-->
+
+        <!-- ** ABOUT ME ** -->
+        <div id="aboutme">
+          <h3>ABOUT ME</h3>
+          <img src="./img/about_me/img_profile.jpg" class="profile_img">
+          <table class="profile_inf mg_auto ltr_spc_2 mt_20">
+            <tbody>
+              <tr>
+                <th>氏名</th>
+                <td>荻野聡子</td>
+              </tr>
+              <tr>
+                <th>生年月日</th>
+                <td>1996年1月31日</td>
+              </tr>
+              <tr>
+                <th>出身地</th>
+                <td>群馬県前橋市</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="about_me_inf txt_left txt_just">自己紹介、PRがはいります自己紹介、PRがはいります自己紹介、PRがはいります自己紹介、PRがはいります自己紹介、PRがはいります自己紹介、PRがはいります自己紹介、PRがはいります自己紹介、PRがはいります</p>
+        <div>        
+
+        <!-- ** SERVICE ** -->
+            <div id="service">
+              <h3>SERVICE</h3>
+              <ul class="service">
+                <li class="direction txt_clr_light txt_left ">
+                  <div>
+                  <h5>DIRECTION</h5>
+                  <p class="txt_just">サービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細です<p>
+                  </div>  
+                </li>
+                <li class="design txt_clr_light txt_left">
+                  <div>
+                  <h5>DESIGN</h5>
+                  <p class="txt_just">サービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細です<p>
+                  </div>  
+                </li>
+                <li class="cording txt_clr_light txt_left">
+                  <div>
+                  <h5>CORDING</h5>
+                  <p class="txt_just">サービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細です<p>
+                  </div>  
+                </li>
+                <li class="marketing txt_clr_light txt_left">
+                  <div>
+                  <h5>MARKETING</h5>
+                  <p class="txt_just">サービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細ですサービスの詳細です<p>
+                  </div>  
+                </li>
+              </ul>
+            </div><!-- service -->
+
+        <!-- ** SKILLS ** -->
+        <div id="skills">
+          <h3>SKILLS</h3>
+          
+          <!-- PC tab -->
+          <div class="pc tab txt-bld fnt_CntryGch">
+            <span id="skltab_dsgn" class="mr_5 pd_5">Web Design</span>
+            <span id="skltab_dev" class="mr_5 pd_5">Web Development</span>
+            <span id="skltab_othr" class="pd_5">Other</span>
+          </div>
+
+          <!-- SP tab WEB DESIGN-->
+          <div id="skl_tgl" class="sp bg_clr_gold txt_clr_light txt_left pd_10 pl_20 pt_2 fnt_CntryGch txt-bld" id="down_btn">WEB DESIGN</div>
+          
+          <ul class="skills skl_dsgn fnt_CntryGch">
+            <li class="mt_10">
+              <img src="./img/skills/icon_photoshop.png" alt="Adobe Photoshop">
+              <span>Adobe Photoshop</span>
+            </li>
+            <li class="mt_10">
+              <img src="./img/skills/icon_illustrator.png" alt="Adobe Illustrator">
+              <span>Adobe Illustrator</span>
+            </li>
+            <li class="mt_10">
+              <img src="./img/skills/icon_xd.png" alt="Adobe Xd">
+              <span>Adobe Xd</span>
+            </li>
+            <li class="mt_10">
+              <img src="./img/skills/icon_cacoo.png" alt="Cacoo">
+              <span>Cacoo</span>
+            </li>
+            <li class="mt_10">
+              <img src="./img/skills/icon_html5.png" alt="html5">
+              <span>HTML5</span>
+            </li>
+            <li class="css3 mt_10">
+              <img src="./img/skills/icon_css3.png" alt="CSS3">
+              <p>CSS3,Sass,Skelton,</p>
+              <p class="p_btm">Compass</p>
+            </li>
+            <li>
+              <img src="./img/skills/icon_js.png" alt="Javascript">
+              <span>Javascript</span>
+            </li>
+            <li>
+              <img src="./img/skills/icon_jquery.png" alt="jQuery">
+              <span>jQuery</span>
+            </li>
+          </ul>
+          <p class="skill_inf txt_left txt_just">キャリアの紹介、そこで身に着けた技術キャリアの紹介。キャリアの紹介、そこで身に着けた技術キャリアの紹介。キャリアの紹介、そこで身に着けた技術キャリアの紹介。</p>
+
+          <!-- SP tab WEB DEVELOPMENT-->
+          <div class="sp bg_clr_gold txt_clr_light txt_left pd_10 pl_20 pt_2 fnt_CntryGch txt-bld" id="down_btn">WEB DEVELOPMENT</div>
+          
+          <ul class="skills skl_dev fnt_CntryGch">
+            <li class="mt_10">
+              <img src="./img/skills/icon_photoshop.png" alt="Adobe Photoshop">
+              <span>Adobe Photoshop</span>
+            </li>
+            <li class="mt_10">
+              <img src="./img/skills/icon_illustrator.png" alt="Adobe Illustrator">
+              <span>Adobe Illustrator</span>
+            </li>
+            <li class="mt_10">
+              <img src="./img/skills/icon_xd.png" alt="Adobe Xd">
+              <span>Adobe Xd</span>
+            </li>
+            <li class="mt_10">
+              <img src="./img/skills/icon_cacoo.png" alt="Cacoo">
+              <span>Cacoo</span>
+            </li>
+            <li class="mt_10">
+              <img src="./img/skills/icon_html5.png" alt="html5">
+              <span>HTML5</span>
+            </li>
+            <li class="css3 mt_10">
+              <img src="./img/skills/icon_css3.png" alt="CSS3">
+              <p>CSS3,Sass,Skelton,</p>
+              <p class="p_btm">Compass</p>
+            </li>
+            <li>
+              <img src="./img/skills/icon_js.png" alt="Javascript">
+              <span>Javascript</span>
+            </li>
+            <li>
+              <img src="./img/skills/icon_jquery.png" alt="jQuery">
+              <span>jQuery</span>
+            </li>
+          </ul>
+          <p class="skill_inf txt_left txt_just">キャリアの紹介、そこで身に着けた技術キャリアの紹介。キャリアの紹介、そこで身に着けた技術キャリアの紹介。キャリアの紹介、そこで身に着けた技術キャリアの紹介。</p>
+
+          <!-- SP tab WEB OTHER-->
+          <div class="sp bg_clr_gold txt_clr_light txt_left pd_10 pl_20 pt_2 fnt_CntryGch txt-bld" id="down_btn">OTHER</div>
+          
+          <ul class="skills skl_othr fnt_CntryGch">
+            <li class="mt_10">
+              <img src="./img/skills/icon_photoshop.png" alt="Adobe Photoshop">
+              <span>Adobe Photoshop</span>
+            </li>
+            <li class="mt_10">
+              <img src="./img/skills/icon_illustrator.png" alt="Adobe Illustrator">
+              <span>Adobe Illustrator</span>
+            </li>
+            <li class="mt_10">
+              <img src="./img/skills/icon_xd.png" alt="Adobe Xd">
+              <span>Adobe Xd</span>
+            </li>
+            <li class="mt_10">
+              <img src="./img/skills/icon_cacoo.png" alt="Cacoo">
+              <span>Cacoo</span>
+            </li>
+            <li class="mt_10">
+              <img src="./img/skills/icon_html5.png" alt="html5">
+              <span>HTML5</span>
+            </li>
+            <li class="css3 mt_10">
+              <img src="./img/skills/icon_css3.png" alt="CSS3">
+              <p>CSS3,Sass,Skelton,</p>
+              <p class="p_btm">Compass</p>
+            </li>
+            <li>
+              <img src="./img/skills/icon_js.png" alt="Javascript">
+              <span>Javascript</span>
+            </li>
+            <li>
+              <img src="./img/skills/icon_jquery.png" alt="jQuery">
+              <span>jQuery</span>
+            </li>
+          </ul>
+          <p class="skill_inf txt_left txt_just">キャリアの紹介、そこで身に着けた技術キャリアの紹介。キャリアの紹介、そこで身に着けた技術キャリアの紹介。キャリアの紹介、そこで身に着けた技術キャリアの紹介。</p>
+
+
+        </div><!-- skills -->
+
+        <!-- ** WORKS ** -->
+        <div id="works" class="bg_clr_gray">
+          <h3 class="pt_30">WORKS</h3>
+          <ul class="works">
+            <li>
+              <table>
+                <tr>
+                  <th class="wrks_portfolio"></th>
+                  <td class="wrks_inf">
+                    <p>WEB SITE</p>
+                    <h6>PORTFOLIO | SATOKO OGINO</h6>
+                    <div class="line_night mg_auto mt_20"></div>
+                    <div class="wrks_btn"><span class="txt_center">MORE</span></div>
+                  </td>
+                </tr>
+              </table>
+            </li>
+            <li>
+              <table>
+                <tr>
+                  <th class="wrks_samplecompany"></th>
+                  <td class="wrks_inf">
+                    <p>WEB SITE</p>
+                    <h6>架空コーポレートサイト | SAMPLE COMPANY</h6>
+                    <div class="line_night mg_auto mt_20"></div>
+                    <div class="wrks_btn"><span class="txt_center">MORE</span></div>
+                  </td>
+                </tr>
+              </table>
+            </li>
+            <li>
+              <table>
+                <tr>
+                  <th class="wrks_appleberry"></th>
+                  <td class="wrks_inf">
+                    <p>WEB SITE</p>
+                    <h6>架空ECサイト | APPLEBERRY</h6>
+                    <div class="line_night mg_auto mt_20"></div>
+                    <div class="wrks_btn"><span class="txt_center">MORE</span></div>
+                  </td>
+                </tr>
+              </table>
+            </li>
+            <li>
+              <table>
+                <tr>
+                  <th class="wrks_iyashinoyu"></th>
+                  <td class="wrks_inf">
+                    <p>BANNER</p>
+                    <h6>架空WEB広告バナー | 癒しの湯</h6>
+                    <div class="line_night mg_auto mt_20"></div>
+                    <div class="wrks_btn"><span class="txt_center">MORE</span></div>
+                  </td>
+                </tr>
+              </table>
+            </li>
+            <li>
+              <table>
+                <tr>
+                  <th class="wrks_winterchocolate"></th>
+                  <td class="wrks_inf">
+                    <p>BANNER</p>
+                    <h6>架空WEB広告バナー | 冬季限定チョコレート</h6>
+                    <div class="line_night mg_auto mt_20"></div>
+                    <div class="wrks_btn"><span class="txt_center">MORE</span></div>
+                  </td>
+                </tr>
+              </table>
+            </li>
+            <li>
+              <table>
+                <tr>
+                  <th class="wrks_myicon"></th>
+                  <td class="wrks_inf">
+                    <p>ILLSUT</p>
+                    <h6>キャラクター制作</h6>
+                    <div class="line_night mg_auto mt_20"></div>
+                    <div class="wrks_btn"><span class="txt_center">MORE</span></div>
+                  </td>
+                </tr>
+              </table>
+            </li>
+            <li>
+              <table>
+                <tr>
+                  <th class="wrks_myicon"></th>
+                  <td class="wrks_inf">
+                    <p>ICON</p>
+                    <h6>アイコン制作</h6>
+                    <div class="line_night mg_auto mt_20"></div>
+                    <div class="wrks_btn"><span class="txt_center">MORE</span></div>
+                  </td>
+                </tr>
+              </table>
+          </ul>
+        </div><!-- works -->
+
+    <!--  </div>-->
+    <!--  </div>-->
+    <!--</div>-->
   </main>
   <!-- /main  -->
 
   <footer>
-    <div id="contact" class="fnt_SitkaSmall txt_center pt_20 mb_50">
+    <div id="contact" class="fnt_SitkaSmall pt_20 mb_50 bg_clr_light">
       <h3>CONTACT</h3>
-      <img src="./img/icon_mail_flmnavy.png">
+      <img src="./img/contact/icon_mail_flmnavy.png">
     </div>
-    <div class="pt_20 txt_center"><a href="#"><img class="u-max-full-width" src="./img/icon_pagetop.png"></a></div>
-    <div class="txt_center bg_clr_night txt_clr_light pt_40 pb_40 mt_20 clearfix">
+    <div class="pt_20"><a href="#"><img class="u-max-full-width" src="./img/icon_pagetop.png"></a></div>
+    <div class="bg_clr_night txt_clr_light pt_40 pb_40 mt_20 clearfix">
         <div class="pb_20">
             <ul>
-            <li><a href="#" class="">HOME</a></li>
+            <li><a href="#">HOME</a></li>
             <li><a href="#">ABOUT ME</a></li>
             <li><a href="#">SERVICE</a></li>
             <li><a href="#">SKILLS</a></li>
@@ -101,18 +396,12 @@
 
   <script>
     $(function(){
-        $(document).ready(function() {
-          $("#sp_navi_btn").click(function(){
-            $(this).next().slideToggle();
-          });
+      $(document).ready(function() {
+        $("#sp_navi_btn").click(function(){
+          $(this).next().slideToggle();
         });
+      });
     });
-    
-    // 共通化は検討
-    // $(function() {
-    //   $("#header").load("header.html");
-    //   $("#footer").load("footer.html");
-    // });
   </script>
 </body>
 </html>

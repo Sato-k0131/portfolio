@@ -35,6 +35,15 @@ a:hover{
     color: inherit;
 }
 
+/* Button
+------------------------------------------------------------*/
+@mixin button($bgcolor, $fntcolor, $lnecolor){
+    width: 140px;
+    height: 30px;
+    background-color: $bgcolor;
+    color: $fntcolor;
+    border: 1px $lnecolor solid;
+}
 
 /* Fonts
 ------------------------------------------------------------*/
@@ -54,18 +63,18 @@ html {
 .fnt_SitkaSmall{
     font-family: "Sitka Small";
 }
-.fnt_SitkaSmallB{
-    font-family: "Sitka Small";
+.fnt_CntryGch{
+    font-family: "Century Gochic";
 }
 /* Color
 ------------------------------------------------------------*/
 $light : #f7f3f3;
 $night : #000b29;
 $gold : #987933;
-$gray : #d0d0d0;
+$gray : #e6e6e6;
 
 
-/* Common
+/* 共通
 ------------------------------------------------------------*/
 // Text-Style
 .txt_center{
@@ -115,6 +124,9 @@ $gray : #d0d0d0;
 .mg_auto{
     margin: auto;
 }
+.mt_0{
+    margin-top: 0px;
+}
 .mt_5{
     margin-top: 5px;
 }
@@ -129,6 +141,12 @@ $gray : #d0d0d0;
 }
 .mr_0{
     margin-right: 0px;
+}
+.mr_1{
+    margin-right: 1px;
+}
+.mr_2{
+    margin-right: 2px;
 }
 .mr_3{
     margin-right: 3px;
@@ -166,6 +184,9 @@ $gray : #d0d0d0;
 
 
 // Padding-Style
+.pt_2{
+    padding-top: 2px;
+}
 .pt_10{
     padding-top: 10px;
 }
@@ -183,6 +204,9 @@ $gray : #d0d0d0;
 }
 .pt_50{
     padding-top: 50px;
+}
+.pt_100{
+    padding-top: 100px;
 }
 .pr_10{
     padding-right: 10px;
@@ -240,12 +264,21 @@ $gray : #d0d0d0;
 .bg_clr_night{
     background-color: $night;
 }
+.bg_clr_gold{
+    background-color: $gold;
+}
 
 .w_100{
     width: 100%;
 }
 
-.line{
+.line_light{
     border-top: solid 1px $light;
     width: 50%;
 }
+
+.line_night{
+    border-top: solid 1px $night;
+    width: 50%;
+}
+

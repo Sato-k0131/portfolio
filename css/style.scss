@@ -1,3 +1,4 @@
+
 @charset "utf-8";
 @import "compass";
 @import 'common';
@@ -9,13 +10,27 @@
 body {
     background-color: $light;
     @include fontsize(12);
-}
+    text-align: center;
 
+    // 見出し設定
+    h3{
+        @include fontsize(22);
+        font-family: "Sitka Small";
+        margin-top: 50px;
+    }
+    @media (min-width: 551px) {
+        h3{
+            @include fontsize(34);
+        }
+    }
+}
 /* HEADER
 ------------------------------------------------------------*/
 #header_in{
     padding-top: 10px;
     padding-bottom: 4px;
+    position: fixed;
+    width: 100%;
 }
 
 // header 2カラム設定
@@ -45,7 +60,8 @@ body {
     position: fixed;
     top: 60px;
     right: 0;
-    background: #848484;
+    background: $night;
+    opacity: 0.7;
     margin: 0;
     padding: 0;
     
@@ -89,13 +105,351 @@ body {
     }
 }
 
+/* MAIN
+------------------------------------------------------------*/
+// EYECATCH
+.eyecatch{
+    background-image: url("../img/img_eyecatch_top.jpg");
+    background-size: cover;
+    box-sizing: border-box;
+    height: 600px;
+    padding-top: 100px;
+    
+    h5{
+        @include fontsize(14);
+        margin-bottom: 5px;
+    }
+    h2{
+        @include fontsize(32);
+    }
+    p{
+        @include fontsize(17);
+    }
+    
+}
+
+// ABOUT ME
+.profile_img{
+    @include border-radius(50%);
+    width: 100px;
+}
+.profile_inf{
+    border-collapse: separate;
+    border-spacing: 0px 8px;
+    tr{
+        margin-bottom: 20px;
+    }
+    th,td{
+        border-bottom: none;
+        padding-top: 5px;
+        margin-bottom: 10px;
+    }
+    th{
+        border-left:5px solid $gold;
+        padding: 5px 24px;
+    }
+    td{
+        text-align: left;
+    }
+}
+
+.about_me_inf{
+    max-width: 960px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+// SERVICE
+.service{
+    li{
+        margin-bottom: 4px; 
+        min-height: 120px;
+        padding: 20px;
+        
+        div{
+            border: solid 1px $light;
+            padding: 10px;
+        }
+
+        h5{
+            margin-bottom: 2px;
+            @include fontsize(16);
+            font-family: "Century Gochic";
+            font-weight: bold; 
+            letter-spacing: 2px;
+            
+        }
+        p{
+            margin: 0;
+            @include fontsize(12);
+            letter-spacing: 2px;
+        }
+    }
+}
+.direction{
+    background-image: url("../img/service/img_direction.jpg");
+    box-sizing: border-box;
+    background-size: cover;
+    width: 100%;
+}
+.design{
+    background-image: url("../img/service/img_design.jpg");
+    box-sizing: border-box;
+    background-size: cover;
+    width: 100%;
+}
+.cording{
+    background-image: url("../img/service/img_cording.jpg");
+    box-sizing: border-box;
+    background-size: cover;
+    width: 100%;
+}
+.marketing{
+    background-image: url("../img/service/img_marketing.jpg");
+    box-sizing: border-box;
+    background-size: cover;
+    width: 100%;
+}
+
+// SKILLS
+.tab span{
+    border: solid 1px $night;
+}
+
+.skills{
+    @include display-flex;
+    @include flex-flow(row wrap);
+    max-width: 960px;
+    margin: auto;
+    padding: 10px;
+
+    li{
+        text-align: left;
+        padding: 6px;
+        padding-bottom: 0px;
+        width: 46%;
+        margin-bottom: 0px;
+        line-height: 0;
+        img{
+            width: 30px;
+             padding-right: 2px;
+        }
+        span{
+            padding: 0;
+            margin: 0;
+            @include fontsize(11);
+            vertical-align: text-top;
+        }
+    }
+}
+        
+// CSS3
+.css3{
+    @include display-flex;
+    @include flex-flow(row wrap);
+    img{
+        display: block;
+        height: 30px;
+    }
+    p{
+        width: 50%;
+        height: 10px;
+        position: relative;
+        top: 7px;
+        margin: 0;
+        padding: 0;
+    }
+    .p_btm{
+        position: relative;
+        top: -10px;
+        left: 32px;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.skill_inf{
+    max-width: 960px;
+    padding: 10px;
+    margin: auto;
+}
+
+// WORKS
+.works{
+    padding-bottom: 40px;
+    @include display-flex;
+    justify-content: space-between;
+    @include flex-direction(column);
+        li{
+            flex: inherit;
+        }
+        table{
+            margin: auto;
+            margin-bottom: 0px;
+        }
+        th, td {
+            padding: 0;
+            display: block;
+        }
+        
+        // img
+        th{
+            border: 2px white solid;
+            height: 240px;
+            box-sizing: border-box;
+            background-size: cover;
+        }
+        
+        // info
+        td{ 
+            margin-bottom: 14px;
+
+            p{
+                margin: 0;
+                padding: 20px;
+                font-family: "Century Gochic";
+                letter-spacing: 2px;
+                text-align: center;
+            }
+            
+            h6{
+                margin: 0px 70px;
+                letter-spacing: 2px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+        }
+        .wrks_inf{
+            width: 300px;
+            height: 220px;
+            padding-bottom: 50px;
+            background-color: white;
+        }   
+}
+
+.wrks_portfolio{
+    background-image: url("../img/works/img_sht_portfolio.jpg");
+}
+.wrks_samplecompany{
+    background-image: url("../img/works/img_sht_samplecompany.jpg");
+}
+.wrks_appleberry{
+    background-image: url("../img/works/img_sht_appleberry.jpg");
+}
+.wrks_iyashinoyu{
+    background-image: url("../img/works/img_sht_iyashinoyu.jpg");
+}
+.wrks_winterchocolate{
+    background-image: url("../img/works/img_sht_winterchocolate.jpg");
+}
+.wrks_myicon{
+    background-image: url("../img/works/img_sht_myicon.png");
+}
+.wrks_icon{
+    background-image: url("../img/works/img_sht_icon.jpg");
+}
+
+.wrks_btn{
+    margin: auto;
+    margin-top: 20px;
+    @include button(white, $night, $night);
+    @include display-flex;
+    @include align-items(center);
+    
+    span{
+        display: block;
+        margin: auto;
+    }
+}
+
+
+// PC
+@media (min-width: 551px) {
+    // EYECATCH
+    .eyecatch{
+        padding-top: 180px;
+        height: 740px;
+
+        h5{
+            @include fontsize(24);
+        }
+        h2{
+            @include fontsize(64);
+        }
+        p{
+            @include fontsize(34);
+        }
+    }
+
+    // ABOUT ME
+    .profile_inf{
+        td{
+            padding-left: 80px;
+        }
+    }
+    
+    // SERVICE
+    .service{
+        padding-left: 10px; 
+        max-width: 960px;
+        margin: auto;
+        @include display-flex;
+        @include flex-flow(row wrap);
+
+        li{
+            margin-bottom: 5px;
+            width: 49%;
+            min-height: 230px;
+            padding: 40px;
+            
+            div{
+                padding: 20px;
+                height: auto;
+                min-height: 105px;
+            }
+        }
+        
+        li:nth-child(even){
+            margin-left: 6px;
+        }
+    }
+
+    // SKILLS
+    .skills{
+        text-align: center;
+        li{
+            width: 16%;
+            padding-left: 22px;
+            margin-left: 50px;
+            margin-bottom: 26px;
+        }
+    }
+    .tab{ 
+        margin: 15px 0 20px;
+        span{
+            border: solid 1px $night;
+            padding: 5px 20px;
+        }
+    }
+    
+    // WORKS
+    .works{
+        max-width: 960px;
+        margin: auto;
+        @include display-flex;
+        @include flex-flow(row wrap);
+    }
+}
+
 
 /* FOOTER
 ------------------------------------------------------------*/
 footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    // position: fixed;
+    // bottom: 0;
+    // width: 100%;
     li{
         margin-bottom: 20px;
     }
@@ -104,7 +458,7 @@ footer{
 @media (min-width: 551px) {
     footer{
         ul{
-            width: 290px;
+            width: 300px;
             margin: auto;
             overflow: hidden;
             
