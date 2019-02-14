@@ -29,6 +29,8 @@ li {
 a {
     text-decoration:none;
     color: inherit;
+    cursor: pointer; 
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 a:hover{
@@ -37,9 +39,9 @@ a:hover{
 
 /* Button
 ------------------------------------------------------------*/
-@mixin button($bgcolor, $fntcolor, $lnecolor){
-    width: 140px;
-    height: 30px;
+@mixin button($bgcolor, $fntcolor, $lnecolor: null){
+    width: 180px;
+    height: 40px;
     background-color: $bgcolor;
     color: $fntcolor;
     border: 1px $lnecolor solid;
@@ -70,8 +72,10 @@ html {
 ------------------------------------------------------------*/
 $light : #f7f3f3;
 $night : #000b29;
-$gold : #987933;
-$gray : #e6e6e6;
+$gold : #c7aa66;
+$gray : #ececec;
+$khaki : #e6ddc5;
+$beige : #f9f8f6;
 
 
 /* 共通
@@ -156,6 +160,9 @@ $gray : #e6e6e6;
 }
 .mr_10{
     margin-right: 10px;
+}
+.mr_20{
+    margin-right: 20px;
 }
 .mb_0{
     margin-bottom: 0px;
@@ -244,6 +251,9 @@ $gray : #e6e6e6;
 .pd_10{
     padding: 10px;
 }
+.pd_15{
+    padding: 15px;
+}
 .pd_20{
     padding: 20px;
 }
@@ -266,6 +276,12 @@ $gray : #e6e6e6;
 }
 .bg_clr_gold{
     background-color: $gold;
+}
+.bg_clr_khaki{
+    background-color: $khaki;
+}
+.bg_clr_beige{
+    background-color: $beige;
 }
 
 .w_100{

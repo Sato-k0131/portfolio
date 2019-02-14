@@ -15,12 +15,14 @@ body {
     // 見出し設定
     h3{
         @include fontsize(22);
+        letter-spacing: 2px;
         font-family: "Sitka Small";
-        margin-top: 50px;
+        margin-top: 60px;
     }
     @media (min-width: 551px) {
         h3{
             @include fontsize(34);
+            letter-spacing: 6px;
         }
     }
 }
@@ -83,8 +85,7 @@ body {
 // PC
 @media (min-width: 551px) {
     #header_in{
-        padding-top: 5px;
-        padding-bottom: 0px;
+        padding: 20px 0; 
     }
     
     .pc_navi_li{
@@ -213,10 +214,34 @@ body {
 }
 
 // SKILLS
-.tab span{
-    border: solid 1px $night;
-}
+.skl_tgl{
+    background-color: $khaki;
+    color: $night;
+    text-align: left;
+    padding: 20px;
+    padding-left: 20px;
+    background-image: url("../img/icon_arrow_down.png");
+    background-repeat: no-repeat;
+    background-position: 90% center; 
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
 
+    span{
+        @include fontsize(14);
+        vertical-align: sub;
+        letter-spacing: 1px;
+    }
+}
+    .active_tgl{
+        background-image: url("../img/icon_arrow_up.png");
+    }
+
+.skill_area{
+    background-color: white;
+    display: none;
+}
+.show_tgl{
+    display: block;
+}
 .skills{
     @include display-flex;
     @include flex-flow(row wrap);
@@ -233,7 +258,7 @@ body {
         line-height: 0;
         img{
             width: 30px;
-             padding-right: 2px;
+            padding-right: 2px;
         }
         span{
             padding: 0;
@@ -270,7 +295,6 @@ body {
 }
 
 .skill_inf{
-    max-width: 960px;
     padding: 10px;
     margin: auto;
 }
@@ -280,6 +304,7 @@ body {
     padding-bottom: 40px;
     @include display-flex;
     justify-content: space-between;
+    // justify-content: flex-start;
     @include flex-direction(column);
         li{
             flex: inherit;
@@ -295,7 +320,6 @@ body {
         
         // img
         th{
-            border: 2px white solid;
             height: 240px;
             box-sizing: border-box;
             background-size: cover;
@@ -325,31 +349,32 @@ body {
             width: 300px;
             height: 220px;
             padding-bottom: 50px;
+            padding-top: 10px;
             background-color: white;
         }   
 }
 
-.wrks_portfolio{
-    background-image: url("../img/works/img_sht_portfolio.jpg");
-}
-.wrks_samplecompany{
-    background-image: url("../img/works/img_sht_samplecompany.jpg");
-}
-.wrks_appleberry{
-    background-image: url("../img/works/img_sht_appleberry.jpg");
-}
-.wrks_iyashinoyu{
-    background-image: url("../img/works/img_sht_iyashinoyu.jpg");
-}
-.wrks_winterchocolate{
-    background-image: url("../img/works/img_sht_winterchocolate.jpg");
-}
-.wrks_myicon{
-    background-image: url("../img/works/img_sht_myicon.png");
-}
-.wrks_icon{
-    background-image: url("../img/works/img_sht_icon.jpg");
-}
+// .wrks_portfolio{
+//     background-image: url("../img/works/img_sht_portfolio.jpg");
+// }
+// .wrks_samplecompany{
+//     background-image: url("../img/works/img_sht_samplecompany.jpg");
+// }
+// .wrks_appleberry{
+//     background-image: url("../img/works/img_sht_appleberry.jpg");
+// }
+// .wrks_iyashinoyu{
+//     background-image: url("../img/works/img_sht_iyashinoyu.jpg");
+// }
+// .wrks_winterchocolate{
+//     background-image: url("../img/works/img_sht_winterchocolate.jpg");
+// }
+// .wrks_myicon{
+//     background-image: url("../img/works/img_sht_myicon.png");
+// }
+// .wrks_icon{
+//     background-image: url("../img/works/img_sht_icon.jpg");
+// }
 
 .wrks_btn{
     margin: auto;
@@ -359,6 +384,7 @@ body {
     @include align-items(center);
     
     span{
+        letter-spacing: 2px;
         display: block;
         margin: auto;
     }
@@ -386,20 +412,25 @@ body {
     // ABOUT ME
     .profile_inf{
         td{
-            padding-left: 80px;
+            width: 50%;
         }
     }
     
+    .about_me_inf{
+        width: 50%;
+    }
+    
+    
     // SERVICE
     .service{
-        padding-left: 10px; 
+        padding-left: 4px; 
         max-width: 960px;
         margin: auto;
         @include display-flex;
         @include flex-flow(row wrap);
 
         li{
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             width: 49%;
             min-height: 230px;
             padding: 40px;
@@ -412,11 +443,15 @@ body {
         }
         
         li:nth-child(even){
-            margin-left: 6px;
+            margin-left: 10px;
         }
     }
 
     // SKILLS
+    .skill_area{
+        max-width: 960px;
+        margin: auto;
+    }
     .skills{
         text-align: center;
         li{
@@ -426,20 +461,66 @@ body {
             margin-bottom: 26px;
         }
     }
+    
+    .skill_inf{
+        width: 50%;
+        padding: 30px 0;
+    }
     .tab{ 
-        margin: 15px 0 20px;
-        span{
-            border: solid 1px $night;
-            padding: 5px 20px;
+        max-width: 960px;
+        margin: auto;
+        @include display-flex;
+        @include align-items(center);
+        justify-content: center;
+        align-items: center;
+
+        div{
+            width:-webkit-calc(100% / 3);
+            width:calc(100% / 3);
+            padding: 20px 0;
+            box-sizing: border-box;
+            background-color: white;
+            border:1px solid $khaki;
+            @include fontsize(14);
+            letter-spacing: 1px;
+            -webkit-tap-highlight-color:rgba(0,0,0,0);
+            cursor: pointer;
+        }
+
+        div:nth-child(2){
+            border-right:none;
+            border-left:none;
+        }
+
+        .active_tb{
+            background-color: $khaki;
         }
     }
-    
+    .skill_area{
+        display:none;
+    }
+    .show_tb{
+        display: block;
+    }
+
+
+
     // WORKS
     .works{
         max-width: 960px;
         margin: auto;
         @include display-flex;
         @include flex-flow(row wrap);
+        justify-content: flex-start;
+        
+        li{
+            width:-webkit-calc(100% / 3);
+            // width: 33.2%
+        }
+    }
+    .wrks_btn:hover{
+        @include button($gold, $light, $gold);
+        
     }
 }
 
@@ -447,11 +528,11 @@ body {
 /* FOOTER
 ------------------------------------------------------------*/
 footer{
-    // position: fixed;
-    // bottom: 0;
-    // width: 100%;
     li{
         margin-bottom: 20px;
+    }
+    .ms{
+        @include fontsize(16);
     }
 }
 // PC
