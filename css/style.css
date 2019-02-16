@@ -27,6 +27,8 @@ a:hover {
 
 /* Button
 ------------------------------------------------------------*/
+/* Categorie
+------------------------------------------------------------*/
 /* Fonts
 ------------------------------------------------------------*/
 html {
@@ -245,10 +247,11 @@ html {
   border-top: solid 1px #000b29;
   width: 50%; }
 
-/* ==========================================
-    - 
-=========================================== */
+/* ================================================
+    - 00. デフォルト
+================================================= */
 body {
+  min-width: 80px;
   background-color: #f7f3f3;
   font-size: 12px;
   font-size: 1.2rem;
@@ -258,20 +261,26 @@ body {
     font-size: 2.2rem;
     letter-spacing: 2px;
     font-family: "Sitka Small";
-    margin-top: 60px; }
+    margin-top: 60px;
+    margin-bottom: 30px; }
   @media (min-width: 551px) {
     body h3 {
       font-size: 34px;
       font-size: 3.4rem;
       letter-spacing: 6px; } }
 
+/* ================================================
+    - 01. 共通コンテンツ
+    header, footer, navi
+================================================= */
 /* HEADER
 ------------------------------------------------------------*/
 #header_in {
   padding-top: 10px;
   padding-bottom: 4px;
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  z-index: 2; }
 
 @media (max-width: 550px) {
   .logo {
@@ -287,6 +296,8 @@ body {
   width: 100%;
   min-width: 160px; }
 
+/* NAVI
+------------------------------------------------------------*/
 .sp_navi_li {
   display: none;
   width: 100%;
@@ -297,7 +308,8 @@ body {
   background: #000b29;
   opacity: 0.7;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  -webkit-overflow-scrolling: touch; }
   .sp_navi_li li {
     margin: 0;
     padding: 0; }
@@ -321,10 +333,30 @@ body {
       padding-right: 22px; }
     .pc_navi_li img {
       width: 18px; } }
+/* FOOTER
+------------------------------------------------------------*/
+footer li {
+  margin-bottom: 20px; }
+footer .ms {
+  font-size: 16px;
+  font-size: 1.6rem; }
+
+@media (min-width: 551px) {
+  footer ul {
+    width: 300px;
+    margin: auto;
+    overflow: hidden; }
+    footer ul li {
+      float: left;
+      padding-right: 10px; } }
+/* ================================================
+    - 02. TOP画面
+    eyecatch, aboutme, service, skills, works
+================================================= */
 /* MAIN
 ------------------------------------------------------------*/
 .eyecatch {
-  background-image: url("../img/img_eyecatch_top.jpg");
+  background-image: url("../img/top/img_eyecatch_top.jpg");
   background-size: cover;
   box-sizing: border-box;
   height: 600px;
@@ -375,38 +407,37 @@ body {
     border: solid 1px #f7f3f3;
     padding: 10px; }
   .service li h5 {
-    margin-bottom: 2px;
-    font-size: 16px;
-    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-size: 1.8rem;
     font-family: "Century Gochic";
-    font-weight: bold;
-    letter-spacing: 2px; }
+    letter-spacing: 3px; }
   .service li p {
     margin: 0;
-    font-size: 12px;
-    font-size: 1.2rem;
+    font-size: 11px;
+    font-size: 1.1rem;
     letter-spacing: 2px; }
 
 .direction {
-  background-image: url("../img/service/img_direction.jpg");
+  background-image: url("../img/top/service/img_direction.jpg");
   box-sizing: border-box;
   background-size: cover;
   width: 100%; }
 
 .design {
-  background-image: url("../img/service/img_design.jpg");
+  background-image: url("../img/top/service/img_design.jpg");
   box-sizing: border-box;
   background-size: cover;
   width: 100%; }
 
 .cording {
-  background-image: url("../img/service/img_cording.jpg");
+  background-image: url("../img/top/service/img_cording.jpg");
   box-sizing: border-box;
   background-size: cover;
   width: 100%; }
 
 .marketing {
-  background-image: url("../img/service/img_marketing.jpg");
+  background-image: url("../img/top/service/img_marketing.jpg");
   box-sizing: border-box;
   background-size: cover;
   width: 100%; }
@@ -502,13 +533,19 @@ body {
     margin-bottom: 0px; }
   .works th, .works td {
     padding: 0;
-    display: block; }
+    display: block;
+    box-shadow: 0 0 6px gray; }
   .works th {
     height: 240px;
     box-sizing: border-box;
     background-size: cover; }
   .works td {
-    margin-bottom: 14px; }
+    margin-bottom: 14px;
+    width: 300px;
+    height: 220px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+    background-color: white; }
     .works td p {
       margin: 0;
       padding: 20px;
@@ -520,21 +557,15 @@ body {
       letter-spacing: 2px;
       text-align: center;
       font-weight: bold; }
-  .works .wrks_inf {
-    width: 300px;
-    height: 220px;
-    padding-bottom: 50px;
-    padding-top: 10px;
-    background-color: white; }
 
 .wrks_btn {
   margin: auto;
   margin-top: 20px;
-  width: 180px;
+  width: 200px;
   height: 40px;
-  background-color: white;
-  color: #000b29;
-  border: 1px #000b29 solid;
+  background-color: #c7aa66;
+  color: white;
+  border: 1px #c7aa66 solid;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
@@ -576,7 +607,8 @@ body {
       margin-bottom: 10px;
       width: 49%;
       min-height: 230px;
-      padding: 40px; }
+      padding: 40px;
+      box-shadow: 0 0 4px gray; }
       .service li div {
         padding: 20px;
         height: auto;
@@ -612,10 +644,9 @@ body {
     .tab div {
       width: -webkit-calc(100% / 3);
       width: calc(100% / 3);
-      padding: 20px 0;
+      padding: 28px 0;
       box-sizing: border-box;
-      background-color: white;
-      border: 1px solid #e6ddc5;
+      background-color: #e6ddc5;
       font-size: 14px;
       font-size: 1.4rem;
       letter-spacing: 1px;
@@ -625,13 +656,16 @@ body {
       border-right: none;
       border-left: none; }
     .tab .active_tb {
-      background-color: #e6ddc5; }
+      background-color: white; }
 
   .skill_area {
     display: none; }
 
   .show_tb {
     display: block; }
+
+  .show_tb {
+    background-color: white; }
 
   .works {
     max-width: 960px;
@@ -645,26 +679,149 @@ body {
       width: -webkit-calc(100% / 3); }
 
   .wrks_btn:hover {
-    width: 180px;
+    cursor: pointer;
+    width: 200px;
     height: 40px;
-    background-color: #c7aa66;
-    color: #f7f3f3;
+    background-color: white;
+    color: #000b29;
     border: 1px #c7aa66 solid; } }
-/* FOOTER
-------------------------------------------------------------*/
-footer li {
-  margin-bottom: 20px; }
-footer .ms {
-  font-size: 16px;
-  font-size: 1.6rem; }
+/* ================================================
+    - 03. WORKS画面
+    eyecatch, title
+================================================= */
+.eyecatch_wk {
+  background-image: url("../img/works/img_eyecathc_dtl.jpg");
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  height: 300px;
+  padding-top: 156px;
+  padding-left: 2rem; }
+  .eyecatch_wk h2 {
+    font-size: 32px;
+    font-size: 3.2rem;
+    margin: 0; }
 
-@media (min-width: 551px) {
-  footer ul {
-    width: 300px;
+.ttl {
+  text-align: left;
+  font-family: "Century Gochic";
+  letter-spacing: 2px; }
+  .ttl p {
+    margin: 10px 0; }
+  .ttl .cat {
+    border-left: 5px solid #c7aa66;
+    padding: 5px 24px;
+    margin: 20px 0; }
+  .ttl h5 {
+    margin: 0;
+    font-weight: bold; }
+
+.cmp {
+  margin: auto;
+  margin: 30px 0; }
+  .cmp .pcimg {
+    width: 70%; }
+  .cmp .spimg {
+    width: 20%;
+    margin-left: 5px; }
+
+.visit_btn {
+  margin: 40px 0;
+  margin: auto;
+  width: 200px;
+  height: 40px;
+  background-color: #c7aa66;
+  color: white;
+  border: 1px #c7aa66 solid;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center; }
+  .visit_btn span {
     margin: auto;
-    overflow: hidden; }
-    footer ul li {
-      float: left;
-      padding-right: 10px; } }
+    text-align: center;
+    font-size: 14px;
+    font-size: 1.4rem;
+    vertical-align: middle; }
+
+@media (max-width: 550px) {
+  .workinf {
+    margin-top: 30px;
+    padding: 20px;
+    box-sizing: border-box; }
+    .workinf table {
+      margin: auto;
+      width: 90%;
+      border-collapse: separate;
+      border-spacing: 0px 8px;
+      letter-spacing: 1px; }
+      .workinf table th, .workinf table td {
+        margin: auto;
+        border-bottom: none;
+        display: block;
+        width: 100%;
+        padding: 0 0;
+        padding: 10px; }
+      .workinf table th {
+        border-bottom: 1px solid #000b29;
+        width: 90%; }
+    .workinf p {
+      font-size: 12px;
+      font-size: 1.2rem;
+      width: 90%;
+      margin: auto; } }
+@media (min-width: 551px) {
+  .eyecatch_wk {
+    height: 500px;
+    padding-top: 250px; }
+    .eyecatch_wk h2 {
+      font-size: 54px;
+      font-size: 5.4rem; }
+
+  .ttl p {
+    font-size: 16px;
+    font-size: 1.6rem; }
+  .ttl .cat {
+    margin: 50px 0px; }
+  .ttl h5 {
+    font-size: 24px;
+    font-size: 2.4rem; }
+
+  .cmp {
+    margin: 60px 0; }
+    .cmp .spimg {
+      margin-left: 20px; }
+
+  .visit_btn:hover {
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    background-color: white;
+    color: #000b29;
+    border: 1px #c7aa66 solid; }
+
+  .workinf {
+    margin-top: 30px;
+    padding: 40px;
+    box-sizing: border-box; }
+    .workinf table {
+      margin: auto;
+      width: 90%;
+      border-collapse: separate;
+      border-spacing: 0px 8px;
+      letter-spacing: 1px; }
+      .workinf table th, .workinf table td {
+        border-bottom: none;
+        padding-left: 30px; }
+      .workinf table th {
+        border-right: 1px solid #000b29;
+        width: 40%; }
+      .workinf table td {
+        width: 60%; }
+    .workinf p {
+      font-size: 12px;
+      font-size: 1.2rem;
+      width: 90%;
+      margin: auto; } }
 
 /*# sourceMappingURL=style.css.map */

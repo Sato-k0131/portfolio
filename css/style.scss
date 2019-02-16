@@ -1,13 +1,13 @@
-
 @charset "utf-8";
 @import "compass";
 @import 'common';
 
-/* ==========================================
-    - 
-=========================================== */
+/* ================================================
+    - 00. デフォルト
+================================================= */
 
 body {
+    min-width: 80px;
     background-color: $light;
     @include fontsize(12);
     text-align: center;
@@ -18,6 +18,7 @@ body {
         letter-spacing: 2px;
         font-family: "Sitka Small";
         margin-top: 60px;
+        margin-bottom: 30px;
     }
     @media (min-width: 551px) {
         h3{
@@ -26,6 +27,13 @@ body {
         }
     }
 }
+
+
+/* ================================================
+    - 01. 共通コンテンツ
+    header, footer, navi
+================================================= */
+
 /* HEADER
 ------------------------------------------------------------*/
 #header_in{
@@ -33,6 +41,7 @@ body {
     padding-bottom: 4px;
     position: fixed;
     width: 100%;
+    z-index: 2;
 }
 
 // header 2カラム設定
@@ -43,6 +52,7 @@ body {
   .navi{
     width:30px;
     float: right;
+    
   }
 }
 
@@ -54,6 +64,8 @@ body {
     min-width: 160px;
 }
 
+/* NAVI
+------------------------------------------------------------*/
 // ハンバーガーメニューOPEN
 .sp_navi_li{
     display: none;
@@ -66,6 +78,7 @@ body {
     opacity: 0.7;
     margin: 0;
     padding: 0;
+    -webkit-overflow-scrolling: touch;
     
     li{
         margin: 0;
@@ -106,11 +119,43 @@ body {
     }
 }
 
+/* FOOTER
+------------------------------------------------------------*/
+footer{
+    li{
+        margin-bottom: 20px;
+    }
+    .ms{
+        @include fontsize(16);
+    }
+}
+// PC
+@media (min-width: 551px) {
+    footer{
+        ul{
+            width: 300px;
+            margin: auto;
+            overflow: hidden;
+            
+            li{
+                float: left;
+                padding-right: 10px;
+            }
+        }   
+    }
+}
+
+
+/* ================================================
+    - 02. TOP画面
+    eyecatch, aboutme, service, skills, works
+================================================= */
+
 /* MAIN
 ------------------------------------------------------------*/
 // EYECATCH
 .eyecatch{
-    background-image: url("../img/img_eyecatch_top.jpg");
+    background-image: url("../img/top/img_eyecatch_top.jpg");
     background-size: cover;
     box-sizing: border-box;
     height: 600px;
@@ -146,8 +191,7 @@ body {
         margin-bottom: 10px;
     }
     th{
-        border-left:5px solid $gold;
-        padding: 5px 24px;
+        @include cat($gold);
     }
     td{
         text-align: left;
@@ -174,40 +218,39 @@ body {
         }
 
         h5{
-            margin-bottom: 2px;
-            @include fontsize(16);
+            margin-bottom: 10px;
+            @include fontsize(18);
             font-family: "Century Gochic";
-            font-weight: bold; 
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             
         }
         p{
             margin: 0;
-            @include fontsize(12);
+            @include fontsize(11);
             letter-spacing: 2px;
         }
     }
 }
 .direction{
-    background-image: url("../img/service/img_direction.jpg");
+    background-image: url("../img/top/service/img_direction.jpg");
     box-sizing: border-box;
     background-size: cover;
     width: 100%;
 }
 .design{
-    background-image: url("../img/service/img_design.jpg");
+    background-image: url("../img/top/service/img_design.jpg");
     box-sizing: border-box;
     background-size: cover;
     width: 100%;
 }
 .cording{
-    background-image: url("../img/service/img_cording.jpg");
+    background-image: url("../img/top/service/img_cording.jpg");
     box-sizing: border-box;
     background-size: cover;
     width: 100%;
 }
 .marketing{
-    background-image: url("../img/service/img_marketing.jpg");
+    background-image: url("../img/top/service/img_marketing.jpg");
     box-sizing: border-box;
     background-size: cover;
     width: 100%;
@@ -313,9 +356,11 @@ body {
             margin: auto;
             margin-bottom: 0px;
         }
+
         th, td {
             padding: 0;
             display: block;
+            box-shadow: 0 0 6px gray;
         }
         
         // img
@@ -328,6 +373,11 @@ body {
         // info
         td{ 
             margin-bottom: 14px;
+            width: 300px;
+            height: 220px;
+            padding-bottom: 50px;
+            padding-top: 10px;
+            background-color: white;
 
             p{
                 margin: 0;
@@ -345,41 +395,12 @@ body {
             }
 
         }
-        .wrks_inf{
-            width: 300px;
-            height: 220px;
-            padding-bottom: 50px;
-            padding-top: 10px;
-            background-color: white;
-        }   
+
 }
-
-// .wrks_portfolio{
-//     background-image: url("../img/works/img_sht_portfolio.jpg");
-// }
-// .wrks_samplecompany{
-//     background-image: url("../img/works/img_sht_samplecompany.jpg");
-// }
-// .wrks_appleberry{
-//     background-image: url("../img/works/img_sht_appleberry.jpg");
-// }
-// .wrks_iyashinoyu{
-//     background-image: url("../img/works/img_sht_iyashinoyu.jpg");
-// }
-// .wrks_winterchocolate{
-//     background-image: url("../img/works/img_sht_winterchocolate.jpg");
-// }
-// .wrks_myicon{
-//     background-image: url("../img/works/img_sht_myicon.png");
-// }
-// .wrks_icon{
-//     background-image: url("../img/works/img_sht_icon.jpg");
-// }
-
 .wrks_btn{
     margin: auto;
     margin-top: 20px;
-    @include button(white, $night, $night);
+    @include button($gold, white, $gold);
     @include display-flex;
     @include align-items(center);
     
@@ -434,6 +455,7 @@ body {
             width: 49%;
             min-height: 230px;
             padding: 40px;
+            box-shadow: 0 0 4px gray;
             
             div{
                 padding: 20px;
@@ -477,10 +499,10 @@ body {
         div{
             width:-webkit-calc(100% / 3);
             width:calc(100% / 3);
-            padding: 20px 0;
+            padding: 28px 0;
             box-sizing: border-box;
-            background-color: white;
-            border:1px solid $khaki;
+            background-color: $khaki;
+            // border:1px solid $khaki;
             @include fontsize(14);
             letter-spacing: 1px;
             -webkit-tap-highlight-color:rgba(0,0,0,0);
@@ -493,7 +515,7 @@ body {
         }
 
         .active_tb{
-            background-color: $khaki;
+            background-color: white;
         }
     }
     .skill_area{
@@ -502,8 +524,9 @@ body {
     .show_tb{
         display: block;
     }
-
-
+    .show_tb{
+        background-color: white;
+    }
 
     // WORKS
     .works{
@@ -515,38 +538,192 @@ body {
         
         li{
             width:-webkit-calc(100% / 3);
-            // width: 33.2%
         }
     }
     .wrks_btn:hover{
-        @include button($gold, $light, $gold);
-        
+        cursor: pointer; 
+        @include button(white, $night, $gold);
     }
 }
 
 
-/* FOOTER
-------------------------------------------------------------*/
-footer{
-    li{
-        margin-bottom: 20px;
-    }
-    .ms{
-        @include fontsize(16);
+/* ================================================
+    - 03. WORKS画面
+    eyecatch, title
+================================================= */
+
+// EYECATCH
+.eyecatch_wk{
+    background-image: url("../img/works/img_eyecathc_dtl.jpg");
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    height: 300px;
+    padding-top: 156px;
+    padding-left: 2rem;
+    h2{
+        @include fontsize(32);
+        margin: 0;
+        // text-align: left;
     }
 }
+
+// TITLE
+.ttl{
+    text-align: left;
+    font-family: "Century Gochic";
+    letter-spacing: 2px;
+    p{
+        margin: 10px 0;
+    }
+    .cat{
+        @include cat($gold);
+        margin: 20px 0;
+    }
+    h5{
+        margin: 0;
+        font-weight: bold;
+    }
+}
+
+// CMP
+.cmp{
+    margin: auto;
+    margin: 30px 0;
+    .pcimg{
+        width: 70%;   
+    }
+    .spimg{
+        width: 20%;
+        margin-left: 5px;
+    }
+}
+
+// VISIT SITE BUTTON
+.visit_btn{
+    margin: 40px 0;
+    margin: auto;
+    @include button($gold, white, $gold);
+    @include display-flex;
+    @include align-items(center);
+    
+    span{
+        margin: auto;
+        text-align: center;
+        @include fontsize(14);
+        vertical-align: middle;
+    }
+}
+
+// WORK INFOMAION
+// SP
+@media (max-width: 550px) {
+    .workinf{
+        margin-top: 30px;
+        padding: 20px;
+        box-sizing: border-box;
+        table{
+            margin: auto;
+            width: 90%;
+            border-collapse: separate;
+            border-spacing: 0px 8px;
+            letter-spacing: 1px;
+            th, td{
+                margin: auto;
+                border-bottom: none;
+                display: block;
+                width: 100%;
+                padding: 0 0;
+                padding: 10px;
+            }
+            th{
+                border-bottom: 1px solid $night;
+                width: 90%;
+
+            }
+    
+        }
+        p{
+            @include fontsize(12);
+            width: 90%;
+            margin: auto;
+        }
+    }
+}
+
+
 // PC
 @media (min-width: 551px) {
-    footer{
-        ul{
-            width: 300px;
+    // EYECATCH
+    .eyecatch_wk{
+        height: 500px;
+        padding-top: 250px;
+        h2{
+            @include fontsize(54);
+        }
+    }
+    
+    // TITLE
+    .ttl{
+        p{
+            @include fontsize(16);
+        }
+        .cat{
+            margin: 50px 0px;
+        }
+        h5{
+            @include fontsize(24);
+        }
+    }
+    
+    // CMP
+    .cmp{
+        margin: 60px 0;
+        
+        .spimg{
+            margin-left: 20px;
+        }
+    }
+    
+    // VISIT SITE BUTTON
+    .visit_btn:hover{
+        cursor: pointer; 
+        @include button(white, $night, $gold);
+    }
+
+    // WORK INFOMAION
+    .workinf{
+        margin-top: 30px;
+        padding: 40px;
+        box-sizing: border-box;
+        table{
             margin: auto;
-            overflow: hidden;
-            
-            li{
-                float: left;
-                padding-right: 10px;
+            width: 90%;
+            border-collapse: separate;
+            border-spacing: 0px 8px;
+            letter-spacing: 1px;
+            // tr{
+            //     padding-bottom: 10px;
+            // }
+            th, td{
+                border-bottom: none;
+                // padding: 5px 10px;
+                padding-left: 30px;
             }
-        }   
+            th{
+                // background-color: $gray;
+                border-right: 1px solid $night;
+                width:40%;
+            }
+            td{
+                // background-color: $light;
+                width:60%;
+            }
+        }
+        p{
+            @include fontsize(12);
+            width: 90%;
+            margin: auto;
+        }
     }
 }
