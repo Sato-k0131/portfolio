@@ -38,6 +38,10 @@ a:hover{
     color: inherit;
 }
 
+p, span, h6, h5, h3, h2{
+    letter-spacing: 2px;
+}
+
 /* Button
 ------------------------------------------------------------*/
 @mixin button($bgcolor, $fntcolor, $lnecolor: null){
@@ -57,6 +61,7 @@ a:hover{
 
 /* Fonts
 ------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Lusitana|Open+Sans');
 $ja_font : "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Verdana, "ＭＳ Ｐゴシック", sans-serif;
 
 // ベースサイズ：10px
@@ -70,19 +75,20 @@ html {
     font-size: ($size / $base) * 1rem;
 }
 
-.fnt_SitkaSmall{
-    font-family: "Sitka Small";
+.fnt_serif{
+    font-family: 'Lusitana', serif;
 }
 .fnt_CntryGch{
-    font-family: "Century Gochic";
+    font-family: 'Open Sans', sans-serif;
 }
+
 /* Color
 ------------------------------------------------------------*/
 $light : #f7f3f3;
 $night : #000b29;
 $gold : #c7aa66;
 $gray : #ececec;
-$khaki : #e6ddc5;
+$khaki : #e4e0d2;
 $beige : #f9f8f6;
 
 
@@ -196,6 +202,9 @@ $beige : #f9f8f6;
 .mb_50{
     margin-bottom: 50px;
 }
+.mb_60{
+    margin-bottom: 60px;
+}
 
 
 // Padding-Style
@@ -273,6 +282,9 @@ $beige : #f9f8f6;
 }
 
 // BackGroundColor-Style
+.bg_clr_light{
+    background-color: $light; 
+}
 .bg_clr_wht{
     background-color: white; 
 }

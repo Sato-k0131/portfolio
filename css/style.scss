@@ -7,6 +7,10 @@
 ================================================= */
 
 body {
+    // Fade In
+    animation: fadeIn 4s ease 0s 1 normal;
+    -webkit-animation: fadeIn 2s ease 0s 1 normal;
+
     background-color: $light;
     @include fontsize(12);
     text-align: center;
@@ -14,8 +18,7 @@ body {
     // 見出し設定
     h3{
         @include fontsize(22);
-        letter-spacing: 2px;
-        font-family: "Sitka Small";
+        font-family: 'Lusitana', serif;
         padding-top: 30px;
         margin-bottom: 30px;
     }
@@ -28,12 +31,20 @@ body {
     }
 }
 
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
 
 /* ================================================
     - 01. 共通コンテンツ
     header, footer, navi
 ================================================= */
-
 /* HEADER
 ------------------------------------------------------------*/
 #header_in{
@@ -52,7 +63,6 @@ body {
   .navi{
     width:30px;
     float: right;
-    
   }
 }
 
@@ -66,13 +76,17 @@ body {
 
 /* NAVI
 ------------------------------------------------------------*/
+.navi{
+    letter-spacing: 2px;
+    font-family: 'Open Sans', sans-serif;
+}
 // ハンバーガーメニューOPEN
 .sp_navi_li{
     display: none;
     width: 100%;
     height: 100%;
     position: fixed;
-    top: 60px;
+    top: 58px;
     right: 0;
     background: $night;
     opacity: 0.7;
@@ -86,7 +100,8 @@ body {
 
         a{
             display: block;
-            padding: 14px 30px;
+            padding: 16px;
+            @include fontsize(14);
         }
         
         img{
@@ -124,6 +139,8 @@ body {
 footer{
     li{
         margin-bottom: 20px;
+        letter-spacing: 2px;
+        font-family: 'Open Sans', sans-serif;
     }
     .ms{
         @include fontsize(16);
@@ -133,7 +150,7 @@ footer{
 @media (min-width: 551px) {
     footer{
         ul{
-            width: 300px;
+            display: inline-block;
             margin: auto;
             overflow: hidden;
             
@@ -141,7 +158,11 @@ footer{
                 float: left;
                 padding-right: 10px;
             }
-        }   
+        }
+        .ms{
+            @include fontsize(20);
+        }
+
     }
 }
 
@@ -155,14 +176,8 @@ footer{
 ------------------------------------------------------------*/
 // EYECATCH
 .eyecatch{
-    background-image: url("../img/top/img_eyecatch_top.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    box-sizing: border-box;
-    height: 660px;
     padding-top: 100px;
-    
+    height: 500px;
     h5{
         @include fontsize(14);
         margin-bottom: 5px;
@@ -174,6 +189,20 @@ footer{
         @include fontsize(17);
     }
     
+}
+.eyecatch::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate3d(0, 0, -1px);
+    transform: translate3d(0, 0, -1px);
+    width: 100%;
+    height: 100vh;
+    background: url("../img/top/img_eyecatch_top.jpg") center/cover no-repeat;
+    -webkit-background-size: cover;
+    z-index: -1;
 }
 
 // ABOUT ME
@@ -202,7 +231,7 @@ footer{
 
 .about_me_inf{
     max-width: 960px;
-    padding: 10px;
+    padding: 20px;
     margin: auto;
     margin-top: 20px;
 }
@@ -210,7 +239,7 @@ footer{
 // SERVICE
 .service{
     li{
-        margin-bottom: 4px; 
+        margin-bottom: 0px; 
         min-height: 120px;
         padding: 20px;
         
@@ -222,14 +251,13 @@ footer{
         h5{
             margin-bottom: 10px;
             @include fontsize(18);
-            font-family: "Century Gochic";
+            font-family: 'Open Sans', sans-serif;
             letter-spacing: 3px;
             
         }
         p{
             margin: 0;
             @include fontsize(11);
-            letter-spacing: 2px;
         }
     }
 }
@@ -273,7 +301,6 @@ footer{
     span{
         @include fontsize(14);
         vertical-align: sub;
-        letter-spacing: 1px;
     }
 }
     .active_tgl{
@@ -295,52 +322,27 @@ footer{
     padding: 10px;
 
     li{
-        text-align: left;
         padding: 6px;
         padding-bottom: 0px;
-        width: 46%;
-        margin-bottom: 0px;
+        margin-bottom: 4px;
+        width: 45%;
         line-height: 0;
         img{
-            width: 30px;
+            width: 40%;
             padding-right: 2px;
+            
         }
-        span{
-            padding: 0;
+        p{
+            padding: 10px;
             margin: 0;
             @include fontsize(11);
-            vertical-align: text-top;
         }
-    }
-}
-        
-// CSS3
-.css3{
-    @include display-flex;
-    @include flex-flow(row wrap);
-    img{
-        display: block;
-        height: 30px;
-    }
-    p{
-        width: 50%;
-        height: 10px;
-        position: relative;
-        top: 7px;
-        margin: 0;
-        padding: 0;
-    }
-    .p_btm{
-        position: relative;
-        top: -10px;
-        left: 32px;
-        margin: 0;
-        padding: 0;
     }
 }
 
 .skill_inf{
-    padding: 10px;
+    padding: 20px;
+    padding-bottom: 0px;
     margin: auto;
 }
 
@@ -349,7 +351,6 @@ footer{
     padding-bottom: 40px;
     @include display-flex;
     justify-content: space-between;
-    // justify-content: flex-start;
     @include flex-direction(column);
         li{
             flex: inherit;
@@ -362,14 +363,22 @@ footer{
         th, td {
             padding: 0;
             display: block;
-            box-shadow: 0 0 6px gray;
+            box-shadow: 0 0 4px gray;
         }
         
         // img
         th{
             height: 240px;
             box-sizing: border-box;
-            background-size: cover;
+            overflow: hidden;
+            img{
+                transition-duration: 0.3s;
+            }
+            img:hover {
+                transform: scale(1.2);
+                transition-duration: 0.3s;
+                opacity: 0.6;
+            }
         }
         
         // info
@@ -384,14 +393,12 @@ footer{
             p{
                 margin: 0;
                 padding: 20px;
-                font-family: "Century Gochic";
-                letter-spacing: 2px;
+                font-family: 'Open Sans', sans-serif;
                 text-align: center;
             }
             
             h6{
                 margin: 0px 70px;
-                letter-spacing: 2px;
                 text-align: center;
                 font-weight: bold;
             }
@@ -407,10 +414,13 @@ footer{
     @include align-items(center);
     
     span{
-        letter-spacing: 2px;
         display: block;
         margin: auto;
     }
+}
+.wrks_btn:hover{
+    cursor: pointer; 
+    @include button(white, $night, $gold);
 }
 
 
@@ -419,7 +429,7 @@ footer{
     // EYECATCH
     .eyecatch{
         padding-top: 180px;
-        height: 740px;
+        height: 700px;
 
         h5{
             @include fontsize(24);
@@ -446,19 +456,18 @@ footer{
     
     // SERVICE
     .service{
-        padding-left: 4px; 
+        padding-left: 10px; 
         max-width: 960px;
         margin: auto;
         @include display-flex;
         @include flex-flow(row wrap);
 
         li{
-            margin-bottom: 10px;
+            margin-bottom: 0px;
             width: 49%;
             min-height: 230px;
             padding: 40px;
-            box-shadow: 0 0 4px gray;
-            
+
             div{
                 padding: 20px;
                 height: auto;
@@ -467,7 +476,7 @@ footer{
         }
         
         li:nth-child(even){
-            margin-left: 10px;
+            margin-left: 0px;
         }
     }
 
@@ -477,18 +486,22 @@ footer{
         margin: auto;
     }
     .skills{
-        text-align: center;
         li{
             width: 16%;
             padding-left: 22px;
-            margin-left: 50px;
-            margin-bottom: 26px;
+            margin-left: 43px;
+            margin-bottom: 30px;
+            img{
+                width: 60%;
+                
+            }
         }
     }
     
     .skill_inf{
         width: 50%;
-        padding: 30px 0;
+        padding-top: 30px;
+        padding-bottom: 0px;
     }
     .tab{ 
         max-width: 960px;
@@ -499,12 +512,11 @@ footer{
         align-items: center;
 
         div{
-            width:-webkit-calc(100% / 3);
-            width:calc(100% / 3);
+            width:-webkit-calc(100% / 4);
+            width:calc(100% / 4);
             padding: 28px 0;
             box-sizing: border-box;
             background-color: $khaki;
-            // border:1px solid $khaki;
             @include fontsize(14);
             letter-spacing: 1px;
             -webkit-tap-highlight-color:rgba(0,0,0,0);
@@ -542,10 +554,6 @@ footer{
             width:-webkit-calc(100% / 3);
         }
     }
-    .wrks_btn:hover{
-        cursor: pointer; 
-        @include button(white, $night, $gold);
-    }
 }
 
 
@@ -556,24 +564,31 @@ footer{
 
 // EYECATCH
 .eyecatch_wk{
-    background-image: url("../img/works/img_eyecathc_dtl.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    // background-position: center;
-    box-sizing: border-box;
-    height: 300px;
-    padding-top: 156px;
+    height: 200px;
+    padding-top: 170px;
     h2{
         @include fontsize(32);
         margin: 0;
     }
 }
-
+.eyecatch_wk::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate3d(0, 0, -1px);
+    transform: translate3d(0, 0, -1px);
+    width: 100%;
+    height: 100vh;
+    background: url("../img/works/img_eyecathc_dtl.jpg") center/cover no-repeat;
+    -webkit-background-size: cover;
+    z-index: -1;
+}
 // TITLE
 .ttl{
     text-align: left;
-    font-family: "Century Gochic";
-    letter-spacing: 2px;
+    font-family: 'Open Sans', sans-serif;
     p{
         margin: 10px 0;
     }
@@ -598,6 +613,9 @@ footer{
         width: 20%;
         margin-left: 5px;
     }
+    .othr{
+        width: 100%;
+    }
 }
 
 // VISIT SITE BUTTON
@@ -615,6 +633,10 @@ footer{
         vertical-align: middle;
     }
 }
+.visit_btn:hover{
+    cursor: pointer; 
+    @include button(white, $night, $gold);
+}
 
 // WORK INFOMAION
 // SP
@@ -628,7 +650,7 @@ footer{
             width: 90%;
             border-collapse: separate;
             border-spacing: 0px 8px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             th, td{
                 margin: auto;
                 border-bottom: none;
@@ -665,13 +687,17 @@ footer{
     .spsht{
         width:-webkit-calc(100% / 3.5);
     }
+    .othr{
+        width: 100%;
+        border: 2px solid $khaki;
+    }
 }
 
 // PC
 @media (min-width: 551px) {
     // EYECATCH
     .eyecatch_wk{
-        height: 500px;
+        height: 300px;
         padding-top: 250px;
         h2{
             @include fontsize(54);
@@ -688,6 +714,7 @@ footer{
         }
         h5{
             @include fontsize(24);
+            letter-spacing: 4px;
         }
     }
     
@@ -698,20 +725,22 @@ footer{
         .spimg{
             margin-left: 20px;
         }
+        
+        .othr{
+            width:70%;
+        }
     }
     
-    // VISIT SITE BUTTON
-    .visit_btn:hover{
-        cursor: pointer; 
-        @include button(white, $night, $gold);
-    }
-
     // WORK INFOMAION
     .workinf{
         margin-top: 50px;
         padding: 40px;
         box-sizing: border-box;
         table{
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 10px 10px;
+            letter-spacing: 2px;
             th, td{
                 border-bottom: none;
                 padding-left: 30px;
@@ -737,6 +766,10 @@ footer{
             margin-bottom: 20px;
         }
         margin-bottom: 80px;
+        
+        .othr{
+            width:49%;
+        }
     }
 
 }

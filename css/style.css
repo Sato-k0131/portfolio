@@ -2,6 +2,7 @@
 /* ===================
     - 共通
 =================== */
+@import url("https://fonts.googleapis.com/css?family=Lusitana|Open+Sans");
 @media (max-width: 550px) {
   .pc {
     display: none; } }
@@ -25,6 +26,9 @@ a {
 a:hover {
   color: inherit; }
 
+p, span, h6, h5, h3, h2 {
+  letter-spacing: 2px; }
+
 /* Button
 ------------------------------------------------------------*/
 /* Categorie
@@ -34,11 +38,11 @@ a:hover {
 html {
   font-size: 62.5%; }
 
-.fnt_SitkaSmall {
-  font-family: "Sitka Small"; }
+.fnt_serif {
+  font-family: 'Lusitana', serif; }
 
 .fnt_CntryGch {
-  font-family: "Century Gochic"; }
+  font-family: 'Open Sans', sans-serif; }
 
 /* Color
 ------------------------------------------------------------*/
@@ -146,6 +150,9 @@ html {
 .mb_50 {
   margin-bottom: 50px; }
 
+.mb_60 {
+  margin-bottom: 60px; }
+
 .pt_2 {
   padding-top: 2px; }
 
@@ -218,6 +225,9 @@ html {
 .pd_0_10 {
   padding: 0 10px; }
 
+.bg_clr_light {
+  background-color: #f7f3f3; }
+
 .bg_clr_wht {
   background-color: white; }
 
@@ -231,7 +241,7 @@ html {
   background-color: #c7aa66; }
 
 .bg_clr_khaki {
-  background-color: #e6ddc5; }
+  background-color: #e4e0d2; }
 
 .bg_clr_beige {
   background-color: #f9f8f6; }
@@ -251,6 +261,8 @@ html {
     - 00. デフォルト
 ================================================= */
 body {
+  animation: fadeIn 4s ease 0s 1 normal;
+  -webkit-animation: fadeIn 2s ease 0s 1 normal;
   background-color: #f7f3f3;
   font-size: 12px;
   font-size: 1.2rem;
@@ -258,8 +270,7 @@ body {
   body h3 {
     font-size: 22px;
     font-size: 2.2rem;
-    letter-spacing: 2px;
-    font-family: "Sitka Small";
+    font-family: 'Lusitana', serif;
     padding-top: 30px;
     margin-bottom: 30px; }
   @media (min-width: 551px) {
@@ -269,6 +280,16 @@ body {
       padding-top: 50px;
       letter-spacing: 6px; } }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 /* ================================================
     - 01. 共通コンテンツ
     header, footer, navi
@@ -298,12 +319,16 @@ body {
 
 /* NAVI
 ------------------------------------------------------------*/
+.navi {
+  letter-spacing: 2px;
+  font-family: 'Open Sans', sans-serif; }
+
 .sp_navi_li {
   display: none;
   width: 100%;
   height: 100%;
   position: fixed;
-  top: 60px;
+  top: 58px;
   right: 0;
   background: #000b29;
   opacity: 0.7;
@@ -315,7 +340,9 @@ body {
     padding: 0; }
     .sp_navi_li li a {
       display: block;
-      padding: 14px 30px; }
+      padding: 16px;
+      font-size: 14px;
+      font-size: 1.4rem; }
     .sp_navi_li li img {
       width: 32px; }
 
@@ -336,19 +363,24 @@ body {
 /* FOOTER
 ------------------------------------------------------------*/
 footer li {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  font-family: 'Open Sans', sans-serif; }
 footer .ms {
   font-size: 16px;
   font-size: 1.6rem; }
 
 @media (min-width: 551px) {
   footer ul {
-    width: 300px;
+    display: inline-block;
     margin: auto;
     overflow: hidden; }
     footer ul li {
       float: left;
-      padding-right: 10px; } }
+      padding-right: 10px; }
+  footer .ms {
+    font-size: 20px;
+    font-size: 2rem; } }
 /* ================================================
     - 02. TOP画面
     eyecatch, aboutme, service, skills, works
@@ -356,13 +388,8 @@ footer .ms {
 /* MAIN
 ------------------------------------------------------------*/
 .eyecatch {
-  background-image: url("../img/top/img_eyecatch_top.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  box-sizing: border-box;
-  height: 660px;
-  padding-top: 100px; }
+  padding-top: 100px;
+  height: 500px; }
   .eyecatch h5 {
     font-size: 14px;
     font-size: 1.4rem;
@@ -373,6 +400,20 @@ footer .ms {
   .eyecatch p {
     font-size: 17px;
     font-size: 1.7rem; }
+
+.eyecatch::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate3d(0, 0, -1px);
+  transform: translate3d(0, 0, -1px);
+  width: 100%;
+  height: 100vh;
+  background: url("../img/top/img_eyecatch_top.jpg") center/cover no-repeat;
+  -webkit-background-size: cover;
+  z-index: -1; }
 
 .profile_img {
   -moz-border-radius: 50%;
@@ -397,12 +438,12 @@ footer .ms {
 
 .about_me_inf {
   max-width: 960px;
-  padding: 10px;
+  padding: 20px;
   margin: auto;
   margin-top: 20px; }
 
 .service li {
-  margin-bottom: 4px;
+  margin-bottom: 0px;
   min-height: 120px;
   padding: 20px; }
   .service li div {
@@ -412,13 +453,12 @@ footer .ms {
     margin-bottom: 10px;
     font-size: 18px;
     font-size: 1.8rem;
-    font-family: "Century Gochic";
+    font-family: 'Open Sans', sans-serif;
     letter-spacing: 3px; }
   .service li p {
     margin: 0;
     font-size: 11px;
-    font-size: 1.1rem;
-    letter-spacing: 2px; }
+    font-size: 1.1rem; }
 
 .direction {
   background-image: url("../img/top/service/img_direction.jpg");
@@ -445,7 +485,7 @@ footer .ms {
   width: 100%; }
 
 .skl_tgl {
-  background-color: #e6ddc5;
+  background-color: #e4e0d2;
   color: #000b29;
   text-align: left;
   padding: 20px;
@@ -457,8 +497,7 @@ footer .ms {
   .skl_tgl span {
     font-size: 14px;
     font-size: 1.4rem;
-    vertical-align: sub;
-    letter-spacing: 1px; }
+    vertical-align: sub; }
 
 .active_tgl {
   background-image: url("../img/icon_arrow_up.png"); }
@@ -479,46 +518,23 @@ footer .ms {
   margin: auto;
   padding: 10px; }
   .skills li {
-    text-align: left;
     padding: 6px;
     padding-bottom: 0px;
-    width: 46%;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
+    width: 45%;
     line-height: 0; }
     .skills li img {
-      width: 30px;
+      width: 40%;
       padding-right: 2px; }
-    .skills li span {
-      padding: 0;
+    .skills li p {
+      padding: 10px;
       margin: 0;
       font-size: 11px;
-      font-size: 1.1rem;
-      vertical-align: text-top; }
-
-.css3 {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap; }
-  .css3 img {
-    display: block;
-    height: 30px; }
-  .css3 p {
-    width: 50%;
-    height: 10px;
-    position: relative;
-    top: 7px;
-    margin: 0;
-    padding: 0; }
-  .css3 .p_btm {
-    position: relative;
-    top: -10px;
-    left: 32px;
-    margin: 0;
-    padding: 0; }
+      font-size: 1.1rem; }
 
 .skill_inf {
-  padding: 10px;
+  padding: 20px;
+  padding-bottom: 0px;
   margin: auto; }
 
 .works {
@@ -536,11 +552,17 @@ footer .ms {
   .works th, .works td {
     padding: 0;
     display: block;
-    box-shadow: 0 0 6px gray; }
+    box-shadow: 0 0 4px gray; }
   .works th {
     height: 240px;
     box-sizing: border-box;
-    background-size: cover; }
+    overflow: hidden; }
+    .works th img {
+      transition-duration: 0.3s; }
+    .works th img:hover {
+      transform: scale(1.2);
+      transition-duration: 0.3s;
+      opacity: 0.6; }
   .works td {
     margin-bottom: 14px;
     width: 300px;
@@ -551,12 +573,10 @@ footer .ms {
     .works td p {
       margin: 0;
       padding: 20px;
-      font-family: "Century Gochic";
-      letter-spacing: 2px;
+      font-family: 'Open Sans', sans-serif;
       text-align: center; }
     .works td h6 {
       margin: 0px 70px;
-      letter-spacing: 2px;
       text-align: center;
       font-weight: bold; }
 
@@ -573,14 +593,21 @@ footer .ms {
   -webkit-align-items: center;
   align-items: center; }
   .wrks_btn span {
-    letter-spacing: 2px;
     display: block;
     margin: auto; }
+
+.wrks_btn:hover {
+  cursor: pointer;
+  width: 200px;
+  height: 40px;
+  background-color: white;
+  color: #000b29;
+  border: 1px #c7aa66 solid; }
 
 @media (min-width: 551px) {
   .eyecatch {
     padding-top: 180px;
-    height: 740px; }
+    height: 700px; }
     .eyecatch h5 {
       font-size: 24px;
       font-size: 2.4rem; }
@@ -598,7 +625,7 @@ footer .ms {
     width: 50%; }
 
   .service {
-    padding-left: 4px;
+    padding-left: 10px;
     max-width: 960px;
     margin: auto;
     display: -webkit-flex;
@@ -606,33 +633,33 @@ footer .ms {
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap; }
     .service li {
-      margin-bottom: 10px;
+      margin-bottom: 0px;
       width: 49%;
       min-height: 230px;
-      padding: 40px;
-      box-shadow: 0 0 4px gray; }
+      padding: 40px; }
       .service li div {
         padding: 20px;
         height: auto;
         min-height: 105px; }
     .service li:nth-child(even) {
-      margin-left: 10px; }
+      margin-left: 0px; }
 
   .skill_area {
     max-width: 960px;
     margin: auto; }
 
-  .skills {
-    text-align: center; }
-    .skills li {
-      width: 16%;
-      padding-left: 22px;
-      margin-left: 50px;
-      margin-bottom: 26px; }
+  .skills li {
+    width: 16%;
+    padding-left: 22px;
+    margin-left: 43px;
+    margin-bottom: 30px; }
+    .skills li img {
+      width: 60%; }
 
   .skill_inf {
     width: 50%;
-    padding: 30px 0; }
+    padding-top: 30px;
+    padding-bottom: 0px; }
 
   .tab {
     max-width: 960px;
@@ -644,11 +671,11 @@ footer .ms {
     justify-content: center;
     align-items: center; }
     .tab div {
-      width: -webkit-calc(100% / 3);
-      width: calc(100% / 3);
+      width: -webkit-calc(100% / 4);
+      width: calc(100% / 4);
       padding: 28px 0;
       box-sizing: border-box;
-      background-color: #e6ddc5;
+      background-color: #e4e0d2;
       font-size: 14px;
       font-size: 1.4rem;
       letter-spacing: 1px;
@@ -678,35 +705,36 @@ footer .ms {
     flex-flow: row wrap;
     justify-content: flex-start; }
     .works li {
-      width: -webkit-calc(100% / 3); }
-
-  .wrks_btn:hover {
-    cursor: pointer;
-    width: 200px;
-    height: 40px;
-    background-color: white;
-    color: #000b29;
-    border: 1px #c7aa66 solid; } }
+      width: -webkit-calc(100% / 3); } }
 /* ================================================
     - 03. WORKS画面
     eyecatch, title
 ================================================= */
 .eyecatch_wk {
-  background-image: url("../img/works/img_eyecathc_dtl.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  box-sizing: border-box;
-  height: 300px;
-  padding-top: 156px; }
+  height: 200px;
+  padding-top: 170px; }
   .eyecatch_wk h2 {
     font-size: 32px;
     font-size: 3.2rem;
     margin: 0; }
 
+.eyecatch_wk::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate3d(0, 0, -1px);
+  transform: translate3d(0, 0, -1px);
+  width: 100%;
+  height: 100vh;
+  background: url("../img/works/img_eyecathc_dtl.jpg") center/cover no-repeat;
+  -webkit-background-size: cover;
+  z-index: -1; }
+
 .ttl {
   text-align: left;
-  font-family: "Century Gochic";
-  letter-spacing: 2px; }
+  font-family: 'Open Sans', sans-serif; }
   .ttl p {
     margin: 10px 0; }
   .ttl .cat {
@@ -725,6 +753,8 @@ footer .ms {
   .cmp .spimg {
     width: 20%;
     margin-left: 5px; }
+  .cmp .othr {
+    width: 100%; }
 
 .visit_btn {
   margin: 40px 0;
@@ -745,6 +775,14 @@ footer .ms {
     font-size: 1.4rem;
     vertical-align: middle; }
 
+.visit_btn:hover {
+  cursor: pointer;
+  width: 200px;
+  height: 40px;
+  background-color: white;
+  color: #000b29;
+  border: 1px #c7aa66 solid; }
+
 @media (max-width: 550px) {
   .workinf {
     margin-top: 30px;
@@ -755,7 +793,7 @@ footer .ms {
       width: 90%;
       border-collapse: separate;
       border-spacing: 0px 8px;
-      letter-spacing: 1px; }
+      letter-spacing: 2px; }
       .workinf table th, .workinf table td {
         margin: auto;
         border-bottom: none;
@@ -776,14 +814,17 @@ footer .ms {
   margin-bottom: 30px; }
   .capture .pcsht {
     width: 90%;
-    border: 2px solid #e6ddc5;
+    border: 2px solid #e4e0d2;
     margin-bottom: 10px; }
   .capture .spsht {
     width: -webkit-calc(100% / 3.5); }
+  .capture .othr {
+    width: 100%;
+    border: 2px solid #e4e0d2; }
 
 @media (min-width: 551px) {
   .eyecatch_wk {
-    height: 500px;
+    height: 300px;
     padding-top: 250px; }
     .eyecatch_wk h2 {
       font-size: 54px;
@@ -796,33 +837,33 @@ footer .ms {
     margin: 50px 0px; }
   .ttl h5 {
     font-size: 24px;
-    font-size: 2.4rem; }
+    font-size: 2.4rem;
+    letter-spacing: 4px; }
 
   .cmp {
     margin: 60px 0; }
     .cmp .spimg {
       margin-left: 20px; }
-
-  .visit_btn:hover {
-    cursor: pointer;
-    width: 200px;
-    height: 40px;
-    background-color: white;
-    color: #000b29;
-    border: 1px #c7aa66 solid; }
+    .cmp .othr {
+      width: 70%; }
 
   .workinf {
     margin-top: 50px;
     padding: 40px;
     box-sizing: border-box; }
-    .workinf table th, .workinf table td {
-      border-bottom: none;
-      padding-left: 30px; }
-    .workinf table th {
-      border-right: 1px solid #000b29;
-      width: 40%; }
-    .workinf table td {
-      width: 60%; }
+    .workinf table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 10px 10px;
+      letter-spacing: 2px; }
+      .workinf table th, .workinf table td {
+        border-bottom: none;
+        padding-left: 30px; }
+      .workinf table th {
+        border-right: 1px solid #000b29;
+        width: 40%; }
+      .workinf table td {
+        width: 60%; }
     .workinf p {
       font-size: 12px;
       font-size: 1.2rem;
@@ -832,6 +873,8 @@ footer .ms {
   .capture {
     margin-bottom: 80px; }
     .capture .pcsht {
-      margin-bottom: 20px; } }
+      margin-bottom: 20px; }
+    .capture .othr {
+      width: 49%; } }
 
 /*# sourceMappingURL=style.css.map */
